@@ -7,11 +7,12 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/dot"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="32dp"
+        android:onClick="onPressDot"
         android:text="."
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,9 +41,10 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
+        android:onClick="onAnswer"
         android:text="="
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button18"
+        app:layout_constraintBottom_toBottomOf="@+id/dot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/num3"
         app:layout_constraintTop_toTopOf="@+id/num3" />
@@ -58,7 +60,7 @@
         android:onClick="onNumberButtonClick"
         android:text="3"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/button18"
+        app:layout_constraintBottom_toTopOf="@+id/dot"
         app:layout_constraintEnd_toStartOf="@+id/button16"
         app:layout_constraintStart_toEndOf="@+id/num2"
         app:layout_constraintTop_toBottomOf="@+id/num6" />
@@ -96,11 +98,12 @@
         app:layout_constraintTop_toBottomOf="@+id/num4" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/add"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
+        android:onClick="onOparationClick"
         android:text="+"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/num6"
@@ -152,7 +155,7 @@
         android:text="6"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/num3"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
+        app:layout_constraintEnd_toStartOf="@+id/add"
         app:layout_constraintStart_toEndOf="@+id/num5"
         app:layout_constraintTop_toBottomOf="@+id/num9" />
 
@@ -186,7 +189,7 @@
         app:layout_constraintBottom_toTopOf="@+id/num5"
         app:layout_constraintEnd_toStartOf="@+id/num9"
         app:layout_constraintStart_toEndOf="@+id/num7"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/divition" />
 
     <Button
         android:id="@+id/num9"
@@ -200,16 +203,17 @@
         android:text="9"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/num6"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/sub"
         app:layout_constraintStart_toEndOf="@+id/num8"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/multiply" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/sub"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
+        android:onClick="onOparationClick"
         android:text="-"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/num9"
@@ -248,41 +252,44 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="9dp"
+        android:onClick="onDisplayClear"
         android:text="C"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/num7"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/divition"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/answareText" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/divition"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:onClick="onOparationClick"
         android:text="/"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/num8"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/multiply"
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/answareText" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/multiply"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="9dp"
         android:layout_marginBottom="8dp"
-        android:text="X"
+        android:onClick="onOparationClick"
+        android:text="x"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/num9"
         app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/divition"
         app:layout_constraintTop_toBottomOf="@+id/answareText" />
 
     <Button
@@ -292,11 +299,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:onClick="onDeleteLastChar"
         android:text="B"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintBottom_toBottomOf="@+id/multiply"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/multiply"
         app:layout_constraintTop_toBottomOf="@+id/answareText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
